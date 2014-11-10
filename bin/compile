@@ -17,3 +17,14 @@ echo -n "-----> Installing OpenJDK ${javaVersion}..."
 install_java ${BUILD_DIR} ${javaVersion}
 jdk_overlay ${BUILD_DIR}
 echo " done"
+
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/jvmcommon.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+
+echo "Profile path is $PROFILE_PATH"
+
+echo 'export PATH="$HOME/.jdk/bin:$PATH"' >> $PROFILE_PATH
+echo 'export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Djava.rmi.server.useCodebaseOnly=true"' >> $PROFILE_PATH
+
+
