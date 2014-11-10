@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 
 echo "Running buildpack java install..."
 
