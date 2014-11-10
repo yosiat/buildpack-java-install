@@ -3,6 +3,9 @@
 
 echo "Running buildpack java install..."
 
+BUILD_DIR=$1
+
+
 JVM_COMMON_BUILDPACK=http://lang-jvm.s3.amazonaws.com/jvm-buildpack-common-v6.tar.gz
 mkdir -p /tmp/jvm-common
 curl --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common
